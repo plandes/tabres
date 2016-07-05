@@ -64,6 +64,12 @@ Usage
          (#(dr/display-results % :title "iris dataset")))))
 ```
 
+Documentation
+-------------
+Additional documentation:
+* [Java](https://plandes.github.io/tabres/apidocs/index.html)
+* [Clojure](https://plandes.github.io/tabres/codox/index.html)
+
 License
 -------
 Copyright © 2016 Paul Landes

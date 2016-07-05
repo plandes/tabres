@@ -24,9 +24,9 @@
   :plugins [[lein-codox "0.9.5"]
             [lein-javadoc "0.3.0"]]
   :codox {:defaults {:doc/format :markdown}
-          :output-path "target/doc/codox"}
+          :output-path "doc/codox"}
   :javadoc-opts {:package-names ["com.zensols.gui.tabres"]
-                 :output-dir "target/doc/apidocs"}
+                 :output-dir "doc/apidocs"}
   :javac-options ["-Xlint:unchecked"]
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [com.zensols.gui/pref "0.0.2"]]
