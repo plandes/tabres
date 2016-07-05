@@ -1,7 +1,10 @@
 Display a graphical table of results using Swing.
 =================================================
 
-This is a simple graphical results for use in Java and Clojure.
+This is a simple graphical results for use in Java and Clojure.  The data is
+either in the form of a list of lists or comes directly from a
+`java.sql.ResultSet`.
+
 
 Features
 --------
