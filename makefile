@@ -4,25 +4,30 @@ POM=		pom.xml
 TARG=		target
 DOC_DIR=	doc
 
-all:	doc
+all:		package
 
 .PHONEY:
-package:	$(TARG) $(DOC_DIR)
+package:	$(TARG)
 
 .PHONEY:
-deploy:
+deploy:		clean
 	lein deploy clojars
 
 # https://github.com/weavejester/codox/wiki/Deploying-to-GitHub-Pages
 $(DOC_DIR):
 	rm -rf $(DOC_DIR) && mkdir $(DOC_DIR)
 	git clone https://github.com/$(USER)/$(PROJ).git $(DOC_DIR)
+	git update-ref -d refs/heads/gh-pages 
+	git push --mirror
 	( cd doc ; \
 	  git symbolic-ref HEAD refs/heads/gh-pages ; \
 	  rm .git/index ; \
 	  git clean -fdx )
 	lein javadoc
 	lein codox
+
+.PHONEY:
+pushdoc:	$(DOC_DIR)
 	( cd doc ; \
 	  git add . ; \
 	  git commit -am "new doc push" ; \
