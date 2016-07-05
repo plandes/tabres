@@ -30,6 +30,4 @@
   :javac-options ["-Xlint:unchecked"]
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [com.zensols.gui/pref "0.0.2"]]
-  :profiles {:dev {:jvm-opts
-                   ["-Dlog4j.configurationFile=test-resources/log4j2.xml"]}}
   :aot :all)

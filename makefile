@@ -2,11 +2,10 @@ POM=	pom.xml
 TARG=	target
 DOC=	$(TARG)/doc
 
-#all:	package
-all:	doc
+all:	package
 
 .PHONEY:
-package:	$(TARG)
+package:	$(TARG) $(DOC)
 
 .PHONEY:
 deploy:
