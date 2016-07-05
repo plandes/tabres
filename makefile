@@ -19,7 +19,7 @@ $(DOC_DIR):
 	git clone https://github.com/$(USER)/$(PROJ).git $(DOC_DIR)
 	git update-ref -d refs/heads/gh-pages 
 	git push --mirror
-	( cd doc ; \
+	( cd $(DOC_DIR) ; \
 	  git symbolic-ref HEAD refs/heads/gh-pages ; \
 	  rm .git/index ; \
 	  git clean -fdx )
@@ -28,7 +28,7 @@ $(DOC_DIR):
 
 .PHONEY:
 pushdoc:	$(DOC_DIR)
-	( cd doc ; \
+	( cd $(DOC_DIR) ; \
 	  git add . ; \
 	  git commit -am "new doc push" ; \
 	  git push -u origin gh-pages )
