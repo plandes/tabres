@@ -15,7 +15,7 @@
 
 (ns ^{:doc "Display a graphical table of results using Swing."
       :author "Paul Landes"}
-  com.zensols.gui.tabres.display-results
+    zensols.tabres.display-results
   (:import (com.zensols.gui.tabres ResultsFrame))
   (:require [clojure.test :as test]))
 

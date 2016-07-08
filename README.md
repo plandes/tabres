@@ -5,7 +5,6 @@ This is a simple graphical results for use in Java and Clojure.  The data is
 either in the form of a list of lists or comes directly from a
 `java.sql.ResultSet`.
 
-
 Features
 --------
 * Table data (i.e. SQL results, spreadsheet data, matrices) visualized.
@@ -18,7 +17,7 @@ Obtaining
 For Clojure, in your `project.clj` file, add:
 
 ```clojure
-[com.zensols.gui/tabres "0.0.2"]
+[com.zensols.gui/tabres "0.0.3"]
 ```
 
 For Java, in your `pom.xml` file, add:
@@ -33,7 +32,7 @@ For Java, in your `pom.xml` file, add:
 <dependency>
     <groupId>com.zensols.gui</groupId>
     <artifactId>tabres</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
 </dependency>
 ```
 
@@ -41,7 +40,7 @@ Usage
 -----
 * Display an adhoc list of animals:
 ```clojure
-(require '[com.zensols.gui.tabres.display-results :as dr])
+(require '[zensols.tabres.display-results :as dr])
 
 (dr/display-results [["dog" "brown" 1]
                      ["cat" "yellow" 33]
@@ -55,7 +54,7 @@ Usage
 ```clojure
 (require '[clojure.java.io :as io])
 (require '[clojure.data.csv :as csv])
-(require '[com.zensols.gui.tabres.display-results :as dr])
+(require '[zensols.tabres.display-results :as dr])
 
 (let [url "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"]
   (with-open [in (clojure.java.io/reader url)]

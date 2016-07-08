@@ -13,7 +13,7 @@
 ;; You should have received a copy of the GNU General Public License along with
 ;; ZGTR.  If not, see <http://www.gnu.org/licenses/>.
 
-(defproject com.zensols.gui/tabres "0.0.2"
+(defproject com.zensols.gui/tabres "0.0.3"
   :description "GUI library to visualize (usually DB) results"
   :license {:name "GPL"
             :url "http://www.gnu.org/licenses/gpl-3.0.en.html"

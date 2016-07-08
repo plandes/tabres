@@ -33,6 +33,10 @@ pushdoc:	$(DOC_DIR)
 	  git commit -am "new doc push" ; \
 	  git push -u origin gh-pages )
 
+.PHONEY:
+install:
+	lein install
+
 $(TARG):
 	lein jar
 
