@@ -13,12 +13,15 @@
 ;; You should have received a copy of the GNU General Public License along with
 ;; ZGTR.  If not, see <http://www.gnu.org/licenses/>.
 
-(defproject com.zensols.gui/tabres "0.0.3"
+(defproject com.zensols.gui/tabres "0.0.4"
   :description "GUI library to visualize (usually DB) results"
+  :pom-addition [:developers [:developer {:id "plandes"}
+                              [:name "Paul Landes"]
+                              [:url "https://github.com/plandes"]]]
+  :url "https://github.com/plandes/tabres"
   :license {:name "GPL"
             :url "http://www.gnu.org/licenses/gpl-3.0.en.html"
             :distribution :repo}
-  :url "https://github.com/plandes/tabres"
   :java-source-paths ["src/java"]
   :source-paths ["src/clojure"]
   :plugins [[lein-codox "0.9.5"]

@@ -16,9 +16,7 @@ Obtaining
 ---------
 For Clojure, in your `project.clj` file, add:
 
-```clojure
-[com.zensols.gui/tabres "0.0.3"]
-```
+[![Clojars Project](http://clojars.org/tabres/latest-version.svg)](http://clojars.org/tabres)
 
 For Java, in your `pom.xml` file, add:
 ```xml
@@ -32,7 +30,7 @@ For Java, in your `pom.xml` file, add:
 <dependency>
     <groupId>com.zensols.gui</groupId>
     <artifactId>tabres</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
 </dependency>
 ```
 
