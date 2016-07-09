@@ -16,7 +16,7 @@ Obtaining
 ---------
 For Clojure, in your `project.clj` file, add:
 
-[![Clojars Project](http://clojars.org/tabres/latest-version.svg)](http://clojars.org/tabres)
+[![Clojars Project](http://clojars.org/com.zensols.gui/tabres/latest-version.svg)](http://clojars.org/com.zensols.gui/tabres/latest-version.svg)
 
 For Java, in your `pom.xml` file, add:
 ```xml
