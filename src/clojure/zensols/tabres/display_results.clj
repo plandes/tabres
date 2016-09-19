@@ -19,6 +19,11 @@
   (:import (com.zensols.gui.tabres ResultsFrame))
   (:require [clojure.test :as test]))
 
+(def ^:dynamic *data-limit*
+  "The limit of data presented in the GUI, which defaults
+  to [[Integer/MAX_VALUE]]."
+  Integer/MAX_VALUE)
+
 (def ^:private result-frame-data (atom nil))
 
 (def ^:dynamic frame-factory-fn
@@ -82,11 +87,10 @@
       (.setHeightFudge frame (if column-names ResultsFrame/HEIGHT_FUDGE 10)))
     (let [res (if (test/function? data-or-fn)
                 (data-or-fn frame)
-                (do
-                  (.displayResults frame data-or-fn column-names)
+                (let [data (take *data-limit* data-or-fn)]
+                  (.displayResults frame data column-names)
                   (if (= title "Results")
-                    (.setTitle frame (format "Results (%d)"
-                                             (count data-or-fn))))
+                    (.setTitle frame (format "Results (%d)" (count data))))
                   frame))]
       (.pack frame)
       (.setVisible frame true)
