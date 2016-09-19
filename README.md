@@ -14,7 +14,7 @@ Features
 
 Obtaining
 ---------
-For Clojure, in your `project.clj` file, add:
+For Clojure, in your `project.clj` or `pom.xml` file, add:
 
 [![Clojars Project](http://clojars.org/com.zensols.gui/tabres/latest-version.svg)](http://clojars.org/com.zensols.gui/tabres/)
 
@@ -23,6 +23,7 @@ Documentation
 Additional documentation:
 * [Java](https://plandes.github.io/tabres/apidocs/index.html)
 * [Clojure](https://plandes.github.io/tabres/codox/index.html)
+
 
 Usage
 -----
