@@ -18,21 +18,11 @@ For Clojure, in your `project.clj` file, add:
 
 [![Clojars Project](http://clojars.org/com.zensols.gui/tabres/latest-version.svg)](http://clojars.org/com.zensols.gui/tabres/)
 
-For Java, in your `pom.xml` file, add:
-```xml
-<repositories>
-    <repository>
-        <id>clojars</id>
-        <url>http://clojars.org/repo/</url>
-    </repository>
-</repositories>
-
-<dependency>
-    <groupId>com.zensols.gui</groupId>
-    <artifactId>tabres</artifactId>
-    <version>0.0.4</version>
-</dependency>
-```
+Documentation
+-------------
+Additional documentation:
+* [Java](https://plandes.github.io/tabres/apidocs/index.html)
+* [Clojure](https://plandes.github.io/tabres/codox/index.html)
 
 Usage
 -----
@@ -60,12 +50,6 @@ Usage
          (take 150)
          (#(dr/display-results % :title "iris dataset")))))
 ```
-
-Documentation
--------------
-Additional documentation:
-* [Java](https://plandes.github.io/tabres/apidocs/index.html)
-* [Clojure](https://plandes.github.io/tabres/codox/index.html)
 
 License
 -------
