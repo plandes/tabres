@@ -1,49 +1,8 @@
-USER=		plandes
-PROJ=		tabres
-POM=		pom.xml
-TARG=		target
-DOC_DIR=	doc
+## makefile automates the build and deployment for lein projects
 
-all:		package
+# location of the http://github.com/plandes/clj-zenbuild cloned directory
+ZBHOME=		../clj-zenbuild
 
-.PHONEY:
-package:	$(TARG)
+all:		jar
 
-.PHONEY:
-deploy:		clean
-	lein deploy clojars
-
-# https://github.com/weavejester/codox/wiki/Deploying-to-GitHub-Pages
-$(DOC_DIR):
-	rm -rf $(DOC_DIR) && mkdir $(DOC_DIR)
-	git clone https://github.com/$(USER)/$(PROJ).git $(DOC_DIR)
-	git update-ref -d refs/heads/gh-pages 
-	git push --mirror
-	( cd $(DOC_DIR) ; \
-	  git symbolic-ref HEAD refs/heads/gh-pages ; \
-	  rm .git/index ; \
-	  git clean -fdx )
-	lein javadoc
-	lein codox
-
-.PHONEY:
-pushdoc:	$(DOC_DIR)
-	( cd $(DOC_DIR) ; \
-	  git add . ; \
-	  git commit -am "new doc push" ; \
-	  git push -u origin gh-pages )
-
-.PHONEY:
-install:
-	lein install
-
-$(TARG):
-	lein jar
-
-$(POM):		project.clj
-	lein pom
-
-clean:
-	rm -fr dev-resources $(POM)* $(DOC_DIR) $(TARG)
-	rmdir test 2>/dev/null || true
-	rmdir resources 2>/dev/null || true
+include $(ZBHOME)/src/mk/compile.mk
