@@ -25,7 +25,8 @@
             [lein-javadoc "0.3.0"]
             [org.clojars.cvillecsteele/lein-git-version "1.0.3"]]
   :codox {:metadata {:doc/format :markdown}
-          :output-path "doc/codox"}
+          :project {:name "GUI library to visualize results"}
+          :output-path "target/doc/codox"}
   :javadoc-opts {:package-names ["com.zensols.gui.tabres"]
                  :output-dir "doc/apidocs"}
   :javac-options ["-Xlint:unchecked"]
