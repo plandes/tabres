@@ -28,7 +28,7 @@
           :project {:name "GUI library to visualize results"}
           :output-path "target/doc/codox"}
   :javadoc-opts {:package-names ["com.zensols.gui.tabres"]
-                 :output-dir "doc/apidocs"}
+                 :output-dir "target/doc/apidocs"}
   :javac-options ["-Xlint:unchecked"]
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [com.zensols.gui/pref "0.0.2"]]
