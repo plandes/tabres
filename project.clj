@@ -1,35 +1,31 @@
-;; This file is part of the Zenos Solutions GUI Table Results Library (ZGTR).
-;;
-;; ZGTR is free software: you can redistribute it and/or modify it under the
-;; terms of the GNU Lesser General Public License as published by the Free
-;; Software Foundation, either version 3 of the License, or (at your option)
-;; any later version.
-;;
-;; ZGTR is distributed in the hope that it will be useful, but WITHOUT ANY
-;; WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-;; FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
-;; details.
-;;
-;; You should have received a copy of the GNU General Public License along with
-;; ZGTR.  If not, see <http://www.gnu.org/licenses/>.
-
 (defproject com.zensols.gui/tabres "0.1.0-SNAPSHOT"
   :description "GUI library to visualize (usually DB) results"
   :url "https://github.com/plandes/tabres"
-  :license {:name "GPL"
-            :url "http://www.gnu.org/licenses/gpl-3.0.en.html"
+  :license {:name "Apache License version 2.0"
+            :url "https://www.apache.org/licenses/LICENSE-2.0"
             :distribution :repo}
-  :java-source-paths ["src/java"]
-  :source-paths ["src/clojure"]
-  :plugins [[lein-codox "0.9.5"]
+  :plugins [[lein-codox "0.10.3"]
             [lein-javadoc "0.3.0"]
-            [org.clojars.cvillecsteele/lein-git-version "1.0.3"]]
+            [org.clojars.cvillecsteele/lein-git-version "1.2.7"]]
   :codox {:metadata {:doc/format :markdown}
           :project {:name "GUI library to visualize results"}
-          :output-path "target/doc/codox"}
+          :output-path "target/doc/codox"
+          :source-uri "https://github.com/plandes/tabres/blob/v{version}/{filepath}#L{line}"}
   :javadoc-opts {:package-names ["com.zensols.gui.tabres"]
                  :output-dir "target/doc/apidocs"}
+  :git-version {:root-ns "zensols.tabres"
+                :path "src/clojure/zensols/tabres"
+                :version-cmd "git describe --match v*.* --abbrev=4 --dirty=-dirty"}
+  :source-paths ["src/clojure"]
+  :test-paths ["test" "test-resources"]
+  :java-source-paths ["src/java"]
   :javac-options ["-Xlint:unchecked"]
+  :jar-exclusions [#".gitignore"]
   :dependencies [[org.clojure/clojure "1.8.0"]
+
+                 ;; preference framework
                  [com.zensols.gui/pref "0.0.2"]]
-  :profiles {:appassem {:aot :all}})
+  :profiles {:1.9 {:dependencies [[org.clojure/clojure "1.9.0"]]}
+             :appassem {:aot :all}
+             :snapshot {:git-version {:version-cmd "echo -snapshot"}}
+             :dev {:dependencies [[org.clojure/data.csv "0.1.4"]]}})
