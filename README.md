@@ -20,7 +20,7 @@ the [Java documentation](#documentation) and [dependency](#obtaining)).
 
 ## Obtaining
 
-In your `project.clj` file, add the following to your `project.clj` file:
+In your `project.clj` file, add the following:
 
 [![Clojars Project](https://clojars.org/com.zensols.gui/tabres/latest-version.svg)](https://clojars.org/com.zensols.gui/tabres/)
 
