@@ -15,7 +15,7 @@ Features:
 
 **Note:** While this is *built* as a Clojure project, it functions
 perfectly as a Java dependency as well (see
-the [Java documentation](#documentation)).
+the [Java documentation](#documentation) and [dependency](#obtaining)).
 
 
 ## Obtaining
@@ -23,6 +23,15 @@ the [Java documentation](#documentation)).
 In your `project.clj` file, add:
 
 [![Clojars Project](https://clojars.org/com.zensols.gui/tabres/latest-version.svg)](https://clojars.org/com.zensols.gui/tabres/)
+
+For Java projects, add:
+```xml
+<dependency>
+    <groupId>com.zensols.gui</groupId>
+    <artifactId>tabres</artifactId>
+    <version>0.0.7</version>
+</dependency>
+```
 
 
 ## Usage
