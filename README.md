@@ -1,5 +1,7 @@
 # Display a graphical table of results using Swing.
 
+[![Travis CI Build Status][travis-badge]][travis-link]
+
 This is a simple graphical results for use in Java and Clojure.  The data is
 either in the form of a list of lists or comes directly from a
 `java.sql.ResultSet`.
@@ -98,3 +100,8 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
+
+<!-- links -->
+[travis-link]: https://travis-ci.org/plandes/tabres
+[travis-badge]: https://travis-ci.org/plandes/tabres.svg?branch=master
