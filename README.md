@@ -27,11 +27,21 @@ In your `project.clj` file, add the following:
 For Java projects, add the following to your [maven] `pom.xml`:
 
 ```xml
-<dependency>
-    <groupId>com.zensols.gui</groupId>
-    <artifactId>tabres</artifactId>
-    <version>0.0.7</version>
-</dependency>
+...
+    <repositories>
+        <repository>
+            <id>clojars</id>
+            <url>http://clojars.org/repo/</url>
+        </repository>
+    </repositories>
+    <dependencies>
+        <dependency>
+            <groupId>com.zensols.gui</groupId>
+            <artifactId>tabres</artifactId>
+            <version>0.0.7</version>
+        </dependency>
+    </dependencies>
+...
 ```
 
 
