@@ -13,7 +13,7 @@ Features:
 * Width of all columns and frame can be automatically (re)sized.
 * Frames include scroll bars.
 
-**Note:** While this is *classified* as a Clojure project, it functions
+**Note:** While this is *built* as a Clojure project, it functions
 perfectly as a Java dependency as well (see
 the [Java documentation](#documentation)).
 
@@ -73,7 +73,6 @@ To build from source, do the folling:
 - Install [Git](https://git-scm.com)
 - Download the source: `git clone --recurse-submodules https://github.com/plandes/tabres && cd tabres`
 - Build the software: `make jar`
-- Build the distribution binaries: `make dist`
 
 Note that you can also build a single jar file with all the dependencies with: `make uber`
 

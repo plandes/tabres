@@ -18,6 +18,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Initial version
 
-[Unreleased]: https://github.com/plandes/tabres/compare/v0.0.1...HEAD
-[0.0.7]: https://github.com/plandes/tabres/compare/e2c0bbb...v0.0.6
+[Unreleased]: https://github.com/plandes/tabres/compare/v0.0.7...HEAD
+[0.0.7]: https://github.com/plandes/tabres/compare/v0.0.6...v0.0.7
 [0.0.6]: https://github.com/plandes/tabres/compare/e2c0bbb...v0.0.6
