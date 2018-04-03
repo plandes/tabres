@@ -37,7 +37,7 @@ In your `project.clj` file, add:
                     :title "Animals")
 ```
 
-* Display the first 150 rows of the
+* Display the first 100 rows of the
 [Iris flower](https://en.wikipedia.org/wiki/Iris_flower_data_set) data set:
 
 ```clojure
