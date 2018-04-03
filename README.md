@@ -20,11 +20,12 @@ the [Java documentation](#documentation) and [dependency](#obtaining)).
 
 ## Obtaining
 
-In your `project.clj` file, add the following to your [maven] `pom.xml`:
+In your `project.clj` file, add the following to your `project.clj` file:
 
 [![Clojars Project](https://clojars.org/com.zensols.gui/tabres/latest-version.svg)](https://clojars.org/com.zensols.gui/tabres/)
 
-For Java projects, add:
+For Java projects, add the following to your [maven] `pom.xml`:
+
 ```xml
 <dependency>
     <groupId>com.zensols.gui</groupId>
