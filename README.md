@@ -20,7 +20,7 @@ the [Java documentation](#documentation) and [dependency](#obtaining)).
 
 ## Obtaining
 
-In your `project.clj` file, add:
+In your `project.clj` file, add the following to your [maven] `pom.xml`:
 
 [![Clojars Project](https://clojars.org/com.zensols.gui/tabres/latest-version.svg)](https://clojars.org/com.zensols.gui/tabres/)
 
@@ -113,3 +113,4 @@ limitations under the License.
 <!-- links -->
 [travis-link]: https://travis-ci.org/plandes/tabres
 [travis-badge]: https://travis-ci.org/plandes/tabres.svg?branch=master
+[maven]: https://maven.apache.org
