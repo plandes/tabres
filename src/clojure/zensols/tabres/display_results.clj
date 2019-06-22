@@ -70,8 +70,9 @@
 
   Keys
   ----
-  *  **:title** the title set on the (maybe new) frame
-  *  **:column-names** seq of the names of the column headers"
+  *  **:title** the title set on the (maybe new) frame.
+  *  **:column-names** seq of the names of the column headers.
+  *  **:new-frame?** if `true` then destroy any old frame and recreate."
   [data-or-fn & {:keys [title column-names new-frame?]
                  :or {title "Results"
                       new-frame? false}}]
