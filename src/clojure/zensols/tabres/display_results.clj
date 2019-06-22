@@ -57,16 +57,21 @@
 (defn display-results
   "Display the results of **data-or-fn**.
 
-  **data** is a two dimension seq or a function.  If it is a two dimension seq
-  the first dimension are the rows and the second the respective colum data.
-  If it is a function, it takes the frame input and what it returns is returned
-  from this function.
+  **data-or-fn** is a two dimension seq or a function.  If the former the first
+  dimension are the rows and the second the respective colum data.  If it is a
+  function, it takes the frame input and what it returns is returned from this
+  function.
 
-  Keys:
-  **title:** the title set on the (maybe new) frame
-  **column-names:** seq of the names of the column headers"
-  [data-or-fn & {:keys [title column-names] :or {title "Results"}}]
-  (let [frame (result-frame title)]
+Keys
+----
+*  **:title** the title set on the (maybe new) frame
+*  **:column-names** seq of the names of the column headers"
+  [data-or-fn & {:keys [title column-names new-frame?]
+                 :or {title "Results"
+                      new-frame? false}}]
+  (let [frame (if new-frame?
+                (new-frame title)
+                (result-frame title))]
     (.setTitle frame title)
     (when (instance? ResultsFrame frame)
       (.setHeightFudge frame (if column-names ResultsFrame/HEIGHT_FUDGE 10)))

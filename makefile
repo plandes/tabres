@@ -12,3 +12,7 @@ include ./zenbuild/main.mk
 .PHONY: test
 test:
 	$(LEIN) test
+
+.PHONY:	docs-hack
+docs-hack:
+	LEIN=$(HOME)/view/lein/bin/lein-2.8.1 make docs
