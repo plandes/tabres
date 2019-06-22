@@ -55,7 +55,7 @@
             nil))))
 
 (defn display-results
-  "Display the results of **data**.
+  "Display the results of **data-or-fn**.
 
   **data** is a two dimension seq or a function.  If it is a two dimension seq
   the first dimension are the rows and the second the respective colum data.
