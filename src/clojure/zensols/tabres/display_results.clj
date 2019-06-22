@@ -2,7 +2,8 @@
       :author "Paul Landes"}
     zensols.tabres.display-results
   (:import (com.zensols.gui.tabres ResultsFrame))
-  (:require [clojure.test :as test]))
+  (:require [clojure.tools.logging :as log]
+            [clojure.test :as test]))
 
 (def ^:dynamic *data-limit*
   "The limit of data presented in the GUI, which defaults
@@ -14,7 +15,7 @@
 (def ^:dynamic frame-factory-fn
   "A function that takes no args used to create the results frame."
   (fn []
-    (let [frame (ResultsFrame. "mainframe")]
+    (let [frame (ResultsFrame. "resultsframe")]
       (.init frame)
       frame)))
 
@@ -26,16 +27,20 @@
     (if title (.setTitle frame title))))
 
 (defn- new-frame [title]
+  (log/debugf "creating new frame with title %s" title)
   (swap! result-frame-data
          (fn [frame]
            (when frame
+             (log/debugf "disposing old frame %s" frame)
              (.dispose frame))
            (let [nf (frame-factory-fn)]
+             (log/debugf "created new frame %s with %s" nf frame-factory-fn)
              (frame-config-fn nf title false)
              nf))))
 
 (defn- result-frame
   [title]
+  (log/debugf "getting result frame with title %s" title)
   (swap! result-frame-data #(or % (new-frame title))))
 
 (defn orphan-frame
@@ -48,6 +53,7 @@
    (swap! result-frame-data
           (fn [frame]
             (when frame
+              (log/debugf "orphaning frame %s" frame)
               (.setDefaultCloseOperation frame
                                          javax.swing.JFrame/DISPOSE_ON_CLOSE)
               (.setEnabled (.getPrefSupport frame) false)
@@ -62,13 +68,14 @@
   function, it takes the frame input and what it returns is returned from this
   function.
 
-Keys
-----
-*  **:title** the title set on the (maybe new) frame
-*  **:column-names** seq of the names of the column headers"
+  Keys
+  ----
+  *  **:title** the title set on the (maybe new) frame
+  *  **:column-names** seq of the names of the column headers"
   [data-or-fn & {:keys [title column-names new-frame?]
                  :or {title "Results"
                       new-frame? false}}]
+  (log/debugf "dislaying for title=%s, new=%s" title new-frame?)
   (let [frame (if new-frame?
                 (new-frame title)
                 (result-frame title))]
@@ -78,6 +85,7 @@ Keys
     (let [res (if (test/function? data-or-fn)
                 (data-or-fn frame)
                 (let [data (take *data-limit* data-or-fn)]
+                  (log/debugf "display results on frame: %s" frame)
                   (.displayResults frame data column-names)
                   (if (= title "Results")
                     (.setTitle frame (format "Results (%d)" (count data))))

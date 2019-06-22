@@ -23,6 +23,9 @@
   :jar-exclusions [#".gitignore"]
   :dependencies [[org.clojure/clojure "1.8.0"]
 
+                 ;; logging
+                 [org.clojure/tools.logging "0.4.1"]
+
                  ;; preference framework
                  [com.zensols.gui/pref "0.0.2"]]
   :profiles {:1.9 {:dependencies [[org.clojure/clojure "1.9.0"]]}
