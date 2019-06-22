@@ -18,6 +18,20 @@ perfectly as a Java dependency as well (see
 the [Java documentation](#documentation) and [dependency](#obtaining)).
 
 
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+## Table of Contents
+
+- [Obtaining](#obtaining)
+- [Documentation](#documentation)
+- [Usage](#usage)
+- [Building](#building)
+- [Changelog](#changelog)
+- [License](#license)
+
+<!-- markdown-toc end -->
+
+
+
 ## Obtaining
 
 In your `project.clj` file, add the following:
@@ -45,10 +59,17 @@ For Java projects, add the following to your [maven] `pom.xml`:
 ```
 
 
+## Documentation
+
+Additional documentation:
+* [Clojure](https://plandes.github.io/tabres/codox/index.html)
+* [Java](https://plandes.github.io/tabres/apidocs/index.html)
+
+
 ## Usage
 
 * Display an adhoc list of animals:
-
+x
 ```clojure
 (require '[zensols.tabres.display-results :as dr])
 
@@ -75,13 +96,6 @@ For Java projects, add the following to your [maven] `pom.xml`:
           (dr/display-results :title "iris dataset"
                               :column-names cols))))
 ```
-
-
-## Documentation
-
-Additional documentation:
-* [Clojure](https://plandes.github.io/tabres/codox/index.html)
-* [Java](https://plandes.github.io/tabres/apidocs/index.html)
 
 
 ## Building
